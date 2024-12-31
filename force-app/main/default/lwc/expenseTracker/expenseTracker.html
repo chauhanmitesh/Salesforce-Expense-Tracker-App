@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <div>
+            <template if:true={data}>
+                <lightning-datatable 
+                    key-field="Id"
+                    data={data}
+                    columns={columns}
+                    sorted-by={SortedBy}
+                    sorted-direction={sortedDirection}
+                    onsort={handleSort}>
+                </lightning-datatable>
+            </template>
+
+            <template if:true={error}>
+                <div>{error}</div>
+           </template>
+        </div>
+    </lightning-card>
+</template>
